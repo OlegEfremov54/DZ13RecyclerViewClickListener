@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainGA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fon"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarGA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mediumPurple"
+        app:titleTextColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/imageGarderobIV"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/image_clothes"
+        android:src="@drawable/baseline_dry_cleaning_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarGA"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/editNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editDescriptionTV"
+        app:layout_constraintTop_toBottomOf="@+id/imageGarderobIV"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="126dp" />
+
+    <TextView
+        android:id="@+id/editDescriptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/descriptionClothes"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="517dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

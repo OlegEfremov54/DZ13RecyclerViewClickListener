@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         toolbarMain = findViewById(R.id.toolbarMain)
         setSupportActionBar(toolbarMain)
         title = "  Мой гардероб"
-        toolbarMain.subtitle = "Версия 1."
-        toolbarMain.setLogo(R.drawable.baseline_dry_cleaning_24)
+        toolbarMain.subtitle = " Версия 2."
+        toolbarMain.setLogo(R.drawable.baseline_dry_cleaning_48)
 
 
         //Привязываем кнопку
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.infoMenuMain -> {
                 Toast.makeText(
-                    applicationContext, "Автор Ефремов О.В. Создан 5.12.2024",
+                    applicationContext, "Автор Ефремов О.В. Создан 6.12.2024",
                     Toast.LENGTH_LONG
                 ).show()
             }

@@ -1,5 +1,6 @@
 package com.example.dz13recyclerviewclicklistener
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -57,15 +58,36 @@ class GarderobActiviti : AppCompatActivity() {
         toolbarGA = findViewById(R.id.toolbarGA)
         setSupportActionBar(toolbarGA)
         title = "  Мой гардероб"
-        toolbarGA.subtitle = "Версия 1."
-        toolbarGA.setLogo(R.drawable.baseline_dry_cleaning_24)
+        toolbarGA.subtitle = " Версия 2."
+        toolbarGA.setLogo(R.drawable.baseline_dry_cleaning_48)
 
 
-        //Запускае менеджер
+        //Запускаем менеджер
         recyclerViewRV = findViewById(R.id.recyclerViewRV)
         recyclerViewRV.layoutManager = LinearLayoutManager(this)
-        recyclerViewRV.adapter = MyAdapter(garderobVal)
+        val adapter  = MyAdapter(garderobVal)
+        recyclerViewRV.adapter = adapter
 
+        recyclerViewRV.setHasFixedSize(true)
+        
+        adapter.setOnGarderobClickListener(object : MyAdapter.OnGarderobClickListener {
+            override fun OnGarderobClick(garderob: Garderob, position: Int) {
+                val intent = Intent(this@GarderobActiviti, DetailActivity::class.java)
+                intent.putExtra("garderob", garderob)
+                intent.putExtra("position", position)
+                startActivity(intent)
+            }
+
+        })
+
+        var updateGarderob: Garderob? = null
+        if (intent.hasExtra("garderob") && intent.hasExtra("position")) {
+            updateGarderob = intent.getSerializableExtra("garderob") as Garderob
+            val position = intent.getIntExtra("position", 0)
+            garderobVal[position] = updateGarderob
+            recyclerViewRV.adapter = adapter
+            adapter.notifyDataSetChanged()
+        }
     }
 
     //Инициализация Меню
@@ -78,7 +100,7 @@ class GarderobActiviti : AppCompatActivity() {
         when (item.itemId) {
             R.id.infoMenuMain -> {
                 Toast.makeText(
-                    applicationContext, "Автор Ефремов О.В. Создан 5.12.2024",
+                    applicationContext, "Автор Ефремов О.В. Создан 6.12.2024",
                     Toast.LENGTH_LONG
                 ).show()
             }

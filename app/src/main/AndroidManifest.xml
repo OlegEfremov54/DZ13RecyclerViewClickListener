@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DZ13RecyclerViewClickListener"
         tools:targetApi="31">
         <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".GarderobActiviti"
             android:exported="false" />
         <activity
