@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DZ13RecyclerViewClickListener</string>
+    <string name="infoStr">Информация о приложении</string>
+    <string name="exit">Выход</string>
+    <string name="image_gard">Предмет гардероба</string>
+    <string name="clothes">Предмет гардероба</string>
+    <string name="descriptionClothes">Описание элемента гардероба</string>
+    <string name="my_garderob">Мой гардероб</string>
+    <string name="in_garderob">К гардеробу</string>
+</resources>
