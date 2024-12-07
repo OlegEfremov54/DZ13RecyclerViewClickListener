@@ -15,13 +15,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class DetailActivity : AppCompatActivity() {
     private var garderobs: Garderob? = null
     private var position: Int = 0
-    private lateinit var layoutLL: LinearLayout
+    private lateinit var layoutLL: ConstraintLayout
     private lateinit var toolbarGA: Toolbar
     private lateinit var imageGarderobIV: ImageView
     private lateinit var editNameTV: TextView
@@ -40,7 +41,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
 
-        layoutLL = findViewById(R.id.mainGA)
+        layoutLL = findViewById(R.id.main)
 
         imageGarderobIV = findViewById(R.id.imageGarderobIV)
         editNameTV = findViewById(R.id.editNameTV)
@@ -105,12 +106,6 @@ class DetailActivity : AppCompatActivity() {
         intent.putExtra("position", position)
         startActivity(intent)
         finish()
-    }
-
-    //Инициализация Меню
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

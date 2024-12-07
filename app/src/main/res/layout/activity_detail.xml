@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainGA"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fon"
@@ -17,6 +17,14 @@
         app:titleTextColor="@color/black"
         tools:ignore="MissingConstraints" />
 
+<LinearLayout
+    android:id="@+id/LL2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/toolbarGA"
+    android:orientation="vertical"
+
+    tools:ignore="MissingConstraints">
 
     <ImageView
         android:id="@+id/imageGarderobIV"
@@ -27,7 +35,7 @@
         android:src="@drawable/baseline_dry_cleaning_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarGA"
+
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -58,6 +66,9 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="517dp" />
+
+
+</LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
