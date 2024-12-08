@@ -108,6 +108,12 @@ class DetailActivity : AppCompatActivity() {
         finish()
     }
 
+    //Инициализация Меню
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.infoMenuMain -> {
